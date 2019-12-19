@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div padding>
+    <ion-item>
+      <ion-label color="primary" staked>Subject</ion-label>
+      <ion-input [(ngModel)]="subject" type="text" placeholder="Digite o subject"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" staked>Conteúdo do Corpo</ion-label>
+      <ion-input [(ngModel)]="body" type="text" placeholder="Digite o corpo do e-mail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" staked>Para</ion-label>
+      <ion-input [(ngModel)]="to" type="text" placeholder="Para"></ion-input>
+    </ion-item>
+    <button ion-button (click)="enviaEmail()">Envia email</button>
+  </div>
+</ion-content>
