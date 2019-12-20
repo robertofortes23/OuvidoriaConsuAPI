@@ -6,18 +6,21 @@
 
 <ion-content padding>
   <div padding>
-    <ion-item>
-      <ion-label color="primary" staked>Subject</ion-label>
-      <ion-input [(ngModel)]="subject" type="text" placeholder="Digite o subject"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" staked>Conteúdo do Corpo</ion-label>
-      <ion-input [(ngModel)]="body" type="text" placeholder="Digite o corpo do e-mail"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" staked>Para</ion-label>
-      <ion-input [(ngModel)]="to" type="text" placeholder="Para"></ion-input>
-    </ion-item>
-    <button ion-button (click)="enviaEmail()">Envia email</button>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-8 offset-2 text-center >
+            <ion-item>
+                <ion-label color="primary" staked>Sugestão:</ion-label>
+                <ion-input class = "inputtexto" [(ngModel)]="body" type="text" placeholder=""></ion-input>
+              </ion-item>
+        </ion-col>
+        
+        <ion-col col-6 offset-3 text-center>
+            <button class="botao" ion-button (click)="enviaEmail()">Enviar</button>
+          </ion-col>
+
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

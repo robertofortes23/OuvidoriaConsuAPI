@@ -7,9 +7,9 @@ import { EmailComposer} from '@ionic-native/email-composer'
   templateUrl: 'home.html'
 })
 export class HomePage {
-  subject='';
+  subject='Ouvidoria Cas_Aos';
   body='';
-  to='';
+  to='armstrongteresina@gmail.com';
   constructor(private emailComposer: EmailComposer, public navCtrl: NavController,) {
   }
 

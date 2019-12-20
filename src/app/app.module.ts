@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
+    
     HomePage
   ],
   imports: [
