@@ -1,31 +1,24 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { EmailComposer} from '@ionic-native/email-composer'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  subject='Ouvidoria Cas_Aos';
-  body='';
-  to='armstrongteresina@gmail.com';
-  constructor(private emailComposer: EmailComposer, public navCtrl: NavController,) {
+  name=''; 
+  message='';
+  disabled=false
+  constructor(public navCtrl: NavController, public http: HttpClient) {
   }
-
+  
   enviaEmail(){
-    let email ={
-      to: this.to,
-      cc:[],
-      bcc:[],
-      attachment:[],
-      subject: this.subject,
-      body: this.body,
-      isHtml: false,
-      app:"Gmail"
-    }
-    this.emailComposer.open(email);
+    this.disabled=true
+    this.http.post("http://172.17.0.1:8001/api/sendemail/send",{name:this.name, message:this.message})
+    .toPromise()
+    .then(res=>console.log(res))
+    .catch(erro=>console.log(erro))
+    
   }
-
-   
 }

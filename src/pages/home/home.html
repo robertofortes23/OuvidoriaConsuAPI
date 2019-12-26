@@ -11,15 +11,18 @@
       <ion-row>
         <ion-col col-8 offset-2 text-center >
             <ion-item>
+                <ion-label color="primary" staked>Nome:</ion-label>
+                <ion-input class = "inputtexto" [(ngModel)]="name" type="text" placeholder=""></ion-input>
+              </ion-item>
+              <ion-item>
                 <ion-label color="primary" staked>Sugestão:</ion-label>
-                <ion-input class = "inputtexto" [(ngModel)]="body" type="text" placeholder=""></ion-input>
+                <ion-input class = "inputtexto" [(ngModel)]="message" type="text" placeholder=""></ion-input>
               </ion-item>
         </ion-col>
         
         <ion-col col-6 offset-3 text-center>
-            <button class="botao" ion-button (click)="enviaEmail()">Enviar</button>
+            <button class="botao" ion-button [disabled]="disabled" (click)="enviaEmail()">Enviar</button>
           </ion-col>
-
       </ion-row>
     </ion-grid>
   </div>
